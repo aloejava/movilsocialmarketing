@@ -1,80 +1,510 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Móvil Social Marketing SAS | Web2App Solutions</title>
-    <style>
-        :root { --primary: #0d6efd; --dark: #121212; --light: #f8f9fa; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); }
-        nav { background: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logo { height: 50px; }
-        .lang-btn { background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
-        header { background: var(--dark); color: white; padding: 3rem 1rem; text-align: center; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-        .card { background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 1rem; text-align: left; }
-        label { display: block; margin-bottom: 0.3rem; font-weight: bold; }
-        input { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button.submit { background: #198754; color: white; border: none; padding: 1rem; width: 100%; font-size: 1.1rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Móvil Social Marketing SAS | Web2App Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --accent: #10b981;
+      --dark: #0f172a;
+      --dark-card: #1e293b;
+      --light-bg: #f8fafc;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
+
+    /* Navbar corregido con buen padding para el logo */
+    nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--dark); }
+    .brand img { height: 48px; width: auto; object-fit: contain; margin-left: 0.5rem; }
+    .brand-text { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.5px; }
+    .brand-text span { color: var(--primary); }
+
+    .lang-btn {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover { background: #e2e8f0; }
+
+    /* Hero Section con Layout Split (Texto + Smartphone 3D) */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 5rem 2rem 6rem;
+    }
+    .hero-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-content { text-align: left; }
+    .badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.25);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      padding: 0.4rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; }
+    .hero p { font-size: 1.15rem; color: #94a3b8; margin-bottom: 2rem; max-width: 600px; }
+
+    /* Smartphone 3D con Animación */
+    .phone-wrapper {
+      perspective: 1000px;
+      display: flex;
+      justify-content: center;
+    }
+    .phone-container {
+      width: 270px;
+      height: 540px;
+      background: #090d16;
+      border-radius: 40px;
+      border: 10px solid #2d3748;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(37, 99, 235, 0.3);
+      position: relative;
+      transform: rotateY(-12deg) rotateX(8deg);
+      transition: all 0.5s ease-in-out;
+      animation: floatPhone 4s ease-in-out infinite alternate;
+    }
+    .phone-container:hover {
+      transform: rotateY(0deg) rotateX(0deg) scale(1.05) translateZ(20px);
+      box-shadow: 0 35px 60px -15px rgba(37, 99, 235, 0.5);
+    }
+    @keyframes floatPhone {
+      0% { transform: translateY(0px) rotateY(-12deg) rotateX(8deg); }
+      100% { transform: translateY(-18px) rotateY(-6deg) rotateX(4deg); }
+    }
+    /* Botones de Hardware del Smartphone */
+    .phone-btn-left { position: absolute; left: -14px; top: 90px; width: 4px; height: 35px; background: #4a5568; border-radius: 2px 0 0 2px; }
+    .phone-btn-left-2 { position: absolute; left: -14px; top: 135px; width: 4px; height: 35px; background: #4a5568; border-radius: 2px 0 0 2px; }
+    .phone-btn-right { position: absolute; right: -14px; top: 110px; width: 4px; height: 50px; background: #4a5568; border-radius: 0 2px 2px 0; }
+    .notch {
+      width: 110px;
+      height: 22px;
+      background: #2d3748;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      z-index: 10;
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .screen-header { background: var(--primary); padding: 2rem 1rem 1rem; color: white; text-align: center; }
+    .screen-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; background: #f1f5f9; }
+    .screen-card { background: white; padding: 0.75rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+
+    /* Form Card */
+    .form-wrapper { max-width: 800px; margin: -3.5rem auto 4rem; padding: 0 1.5rem; position: relative; z-index: 20; }
+    .form-card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border);
+    }
+    .form-card h2 { font-size: 1.6rem; font-weight: 700; color: var(--dark); text-align: center; margin-bottom: 0.5rem; }
+    .form-card p.subtitle { font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-bottom: 2rem; }
+
+    .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
+    .form-group { text-align: left; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; }
+    .form-group input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15); }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 1.5rem;
+    }
+    .submit-btn:hover { background: #059669; }
+    .form-footer { font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
+
+    /* Features / Use Cases Deep Dive */
+    .features { padding: 4rem 1.5rem; max-width: 1150px; margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 3rem; }
+    .section-title h2 { font-size: 2.1rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
+    .section-title p { color: var(--text-muted); font-size: 1.05rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .card {
+      background: #ffffff;
+      padding: 2.2rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08); }
+    .icon { font-size: 2.4rem; margin-bottom: 1.25rem; display: inline-block; }
+    .card h3 { font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 0.75rem; }
+    .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+    /* Steps */
+    .steps-bg { background: #ffffff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4.5rem 1.5rem; }
+    .steps-container { max-width: 1000px; margin: 0 auto; }
+    .step-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+    .step-item { text-align: center; }
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.3rem;
+      margin: 0 auto 1.25rem;
+    }
+
+    /* Footer */
+    footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 2.5rem 1.5rem; font-size: 0.875rem; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content { text-align: center; }
+      .hero h1 { font-size: 2.2rem; }
+      .phone-wrapper { margin-top: 2rem; }
+      nav { padding: 1rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-    <!-- REEMPLAZA "logo.png" CON LA RUTA DE TU IMAGEN -->
-    <img src="logo.png" alt="Móvil Social Marketing" class="logo" id="app-logo">
-    <button class="lang-btn" onclick="toggleLanguage()">Switch to English</button>
-</nav>
+  <!-- Navbar -->
+  <nav>
+    <a href="#" class="brand">
+      <img src="logo.png" alt="Móvil Social Marketing Logo" onerror="this.style.display='none'">
+      <div class="brand-text">MÓVIL SOCIAL <span>MARKETING</span></div>
+    </a>
+    <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
+  </nav>
 
-<header>
-    <h1 id="hero-title">Convierte tu Página Web en una App Móvil</h1>
-    <p id="hero-sub">Publica en Google Play y App Store. Aumenta tus ventas y retén a tus clientes con Notificaciones Push.</p>
-</header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="badge" id="badgeText">Solución Web2App Corporativa</div>
+        <h1 id="heroTitle">Convierte tu Sitio Web en una App Móvil Profesional</h1>
+        <p id="heroSubtitle">Aumenta las ventas recurrentes, fortalece el posicionamiento de tu marca y comunícate sin algoritmos directamente en el smartphone de tus clientes.</p>
+      </div>
 
-<div class="container">
-    <div class="card">
-        <h2 id="form-title" style="text-align: center;">Solicita tu Demo Gratis de 7 Días</h2>
-        
-        <!-- Formulario configurado con Formspree -->
-        <form action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST">
-            <div class="form-group">
-                <label id="lbl-biz" for="biz">Nombre de tu Empresa / Business Name</label>
-                <input type="text" id="biz" name="business" required>
+      <!-- Smartphone 3D interactivo -->
+      <div class="phone-wrapper">
+        <div class="phone-container">
+          <div class="phone-btn-left"></div>
+          <div class="phone-btn-left-2"></div>
+          <div class="phone-btn-right"></div>
+          <div class="notch"></div>
+          <div class="phone-screen">
+            <div class="screen-header">
+              <div style="font-size: 0.75rem; font-weight: bold;">TU MARCA APP</div>
             </div>
-            <div class="form-group">
-                <label id="lbl-web" for="web">URL de tu Sitio Web / Website URL</label>
-                <input type="url" id="web" name="website" required placeholder="https://tuweb.com">
+            <div class="screen-body">
+              <div class="screen-card" style="height: 60px; background: #e2e8f0;"></div>
+              <div class="screen-card">
+                <div style="height: 10px; width: 60%; background: #2563eb; margin-bottom: 6px; border-radius: 4px;"></div>
+                <div style="height: 8px; width: 90%; background: #cbd5e1; border-radius: 4px;"></div>
+              </div>
+              <div class="screen-card" style="background: #dcfce7; border: 1px solid #86efac;">
+                <div style="font-size: 0.7rem; font-weight: bold; color: #166534;">🔔 Notificación Push</div>
+                <div style="font-size: 0.65rem; color: #15803d;">¡Descuento exclusivo para ti hoy!</div>
+              </div>
             </div>
-            <div class="form-group">
-                <label id="lbl-email" for="email">Correo Electrónico / Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <button type="submit" class="submit" id="btn-submit">Crear Mi App Demo Gratis</button>
-        </form>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </section>
 
-<script>
+  <!-- Form Card -->
+  <div class="form-wrapper">
+    <div class="form-card">
+      <h2 id="formTitle">Solicita tu Demo Interactiva Gratis</h2>
+      <p class="subtitle" id="formSubtitle">Evaluamos tu sitio web y te enviamos una muestra funcional para probarla por 7 días.</p>
+
+      <form action="https://formspree.io/f/xbjnqkyv" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="company" id="labelCompany">Nombre de tu Empresa / Marca</label>
+            <input type="text" id="company" name="company" placeholder="Ej. Mi Tienda Online" required>
+          </div>
+
+          <div class="form-group">
+            <label for="website" id="labelWebsite">URL de tu Sitio Web Actual</label>
+            <input type="url" id="website" name="website" placeholder="https://tuempresa.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" id="labelEmail">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="contacto@tuempresa.com" required>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="btnSubmit">🚀 Solicitar App Demo Gratis</button>
+      </form>
+      <div class="form-footer" id="formFooter">🔒 Proceso 100% seguro. Sin tarjeta de crédito ni compromisos.</div>
+    </div>
+  </div>
+
+  <!-- Por qué una App (Beneficios Específicos) -->
+  <section class="features">
+    <div class="section-title">
+      <h2 id="featMainTitle">¿Por qué una App Móvil transforma tu Negocio?</h2>
+      <p id="featMainSubtitle">Razones estratégicas para llevar tu sitio web al siguiente nivel comercial.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="icon">📲</div>
+        <h3 id="f1Title">Presencia Permanente en la Pantalla</h3>
+        <p id="f1Desc">El icono de tu marca estará visible todos los días en el teléfono de tu cliente. Aumenta la recordación de marca y la tasa de recompra (*LTV*) sin depender del navegador.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔔</div>
+        <h3 id="f2Title">Canal Directo sin Intermediarios</h3>
+        <p id="f2Desc">Llega a tus clientes con Notificaciones Push inmediatas sobre lanzamientos, ofertas o recordatorios con hasta un 90% de apertura, superando ampliamente al Email Marketing.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏆</div>
+        <h3 id="f3Title">Autoridad y Prestigio Corporativo</h3>
+        <p id="f3Desc">Estar presente en la Google Play Store y App Store le da a tu empresa una imagen de solidez internacional, elevando la confianza del cliente al momento de comprar.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3 id="f4Title">Navegación Rápida y Modo Offline</h3>
+        <p id="f4Desc">La App almacena recursos clave en caché para cargar a alta velocidad y mantener acceso a información o catálogos aun cuando el usuario tenga baja conectividad.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔄</div>
+        <h3 id="f5Title">Sincronización Automática</h3>
+        <p id="f5Desc">No necesitas administrar dos plataformas. Cualquier producto, artículo o cambio que actualices en tu sitio web se reflejará al instante en la App.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💎</div>
+        <h3 id="f6Title">Experiencia de Usuario Inmersiva</h3>
+        <p id="f6Desc">Sin barras de navegación de navegadores ni distracciones de pestañas de terceros. El usuario interactúa en un entorno 100% enfocado en tu oferta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pasos -->
+  <section class="steps-bg">
+    <div class="steps-container">
+      <div class="section-title">
+        <h2 id="stepsTitle">Proceso de Trabajo Sencillo</h2>
+        <p id="stepsSubtitle">En 3 pasos estructurados ponemos tu aplicación en marcha.</p>
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <h3 id="s1Title">1. Envías la URL</h3>
+          <p id="s1Desc">Ingresas los datos de tu sitio web en nuestro formulario para el análisis técnico.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <h3 id="s2Title">2. Desarrollamos la Demo</h3>
+          <p id="s2Desc">Configuramos y empaquetamos la versión móvil con las optimizaciones requeridas.</p>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <h3 id="s3Title">3. Pruebas y Publicación</h3>
+          <p id="s3Desc">Revisas la App por 7 días gratis y procedemos con el despliegue en tiendas de aplicaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Móvil Social Marketing SAS. Todos los derechos reservados.</p>
+    <p>Web2App Solutions & Enterprise Mobile Growth</p>
+  </footer>
+
+  <!-- Script Multilingüe -->
+  <script>
     let currentLang = 'es';
-    function toggleLanguage() {
-        if (currentLang === 'es') {
-            document.getElementById('hero-title').innerText = "Turn Your Website Into a Mobile App";
-            document.getElementById('hero-sub').innerText = "Publish to Google Play & App Store. Increase sales with Push Notifications.";
-            document.getElementById('form-title').innerText = "Request Your 7-Day Free App Demo";
-            document.getElementById('btn-submit').innerText = "Build My Free Demo App";
-            document.querySelector('.lang-btn').innerText = "Cambiar a Español";
-            currentLang = 'en';
-        } else {
-            document.getElementById('hero-title').innerText = "Convierte tu Página Web en una App Móvil";
-            document.getElementById('hero-sub').innerText = "Publica en Google Play y App Store. Aumenta tus ventas y retén a tus clientes con Notificaciones Push.";
-            document.getElementById('form-title').innerText = "Solicita tu Demo Gratis de 7 Días";
-            document.getElementById('btn-submit').innerText = "Crear Mi App Demo Gratis";
-            document.querySelector('.lang-btn').innerText = "Switch to English";
-            currentLang = 'es';
-        } 
-    }
-</script>
 
+    const translations = {
+      es: {
+        toggleBtn: 'English',
+        badgeText: 'Solución Web2App Corporativa',
+        heroTitle: 'Convierte tu Sitio Web en una App Móvil Profesional',
+        heroSubtitle: 'Aumenta las ventas recurrentes, fortalece el posicionamiento de tu marca y comunícate sin algoritmos directamente en el smartphone de tus clientes.',
+        formTitle: 'Solicita tu Demo Interactiva Gratis',
+        formSubtitle: 'Evaluamos tu sitio web y te enviamos una muestra funcional para probarla por 7 días.',
+        labelCompany: 'Nombre de tu Empresa / Marca',
+        labelWebsite: 'URL de tu Sitio Web Actual',
+        labelEmail: 'Correo Electrónico',
+        btnSubmit: '🚀 Solicitar App Demo Gratis',
+        formFooter: '🔒 Proceso 100% seguro. Sin tarjeta de crédito ni compromisos.',
+        featMainTitle: '¿Por qué una App Móvil transforma tu Negocio?',
+        featMainSubtitle: 'Razones estratégicas para llevar tu sitio web al siguiente nivel comercial.',
+        f1Title: 'Presencia Permanente en la Pantalla',
+        f1Desc: 'El icono de tu marca estará visible todos los días en el teléfono de tu cliente. Aumenta la recordación de marca y la tasa de recompra (LTV) sin depender del navegador.',
+        f2Title: 'Canal Directo sin Intermediarios',
+        f2Desc: 'Llega a tus clientes con Notificaciones Push inmediatas sobre lanzamientos, ofertas o recordatorios con hasta un 90% de apertura, superando ampliamente al Email Marketing.',
+        f3Title: 'Autoridad y Prestigio Corporativo',
+        f3Desc: 'Estar presente en la Google Play Store y App Store le da a tu empresa una imagen de solidez internacional, elevando la confianza del cliente al momento de comprar.',
+        f4Title: 'Navegación Rápida y Modo Offline',
+        f4Desc: 'La App almacena recursos clave en caché para cargar a alta velocidad y mantener acceso a información o catálogos aun cuando el usuario tenga baja conectividad.',
+        f5Title: 'Sincronización Automática',
+        f5Desc: 'No necesitas administrar dos plataformas. Cualquier producto, artículo o cambio que actualices en tu sitio web se reflejará al instante en la App.',
+        f6Title: 'Experiencia de Usuario Inmersiva',
+        f6Desc: 'Sin barras de navegación de navegadores ni distracciones de pestañas de terceros. El usuario interactúa en un entorno 100% enfocado en tu oferta.',
+        stepsTitle: 'Proceso de Trabajo Sencillo',
+        stepsSubtitle: 'En 3 pasos estructurados ponemos tu aplicación en marcha.',
+        s1Title: '1. Envías la URL',
+        s1Desc: 'Ingresas los datos de tu sitio web en nuestro formulario para el análisis técnico.',
+        s2Title: '2. Desarrollamos la Demo',
+        s2Desc: 'Configuramos y empaquetamos la versión móvil con las optimizaciones requeridas.',
+        s3Title: '3. Pruebas y Publicación',
+        s3Desc: 'Revisas la App por 7 días gratis y procedemos con el despliegue en tiendas de aplicaciones.'
+      },
+      en: {
+        toggleBtn: 'Español',
+        badgeText: 'Enterprise Web2App Solution',
+        heroTitle: 'Turn Your Website Into a Professional Mobile App',
+        heroSubtitle: 'Boost repeat sales, strengthen brand equity, and communicate directly to your customers\' smartphones without algorithm barriers.',
+        formTitle: 'Request Your Free Interactive Demo',
+        formSubtitle: 'We evaluate your website and deliver a functional demo to test for 7 days.',
+        labelCompany: 'Company / Brand Name',
+        labelWebsite: 'Current Website URL',
+        labelEmail: 'Email Address',
+        btnSubmit: '🚀 Request Free Demo App',
+        formFooter: '🔒 100% Secure Process. No credit card required.',
+        featMainTitle: 'Why a Mobile App Transforms Your Business',
+        featMainSubtitle: 'Strategic reasons to take your website conversions to the next level.',
+        f1Title: 'Permanent Home Screen Presence',
+        f1Desc: 'Your brand icon remains visible daily on your customer\'s phone. Boost brand recall and Customer Lifetime Value (LTV) without relying on browsers.',
+        f2Title: 'Direct Channel Without Middlemen',
+        f2Desc: 'Reach customers with instant Push Notifications for launches, promotions, and updates with open rates up to 90%, far outperforming Email Marketing.',
+        f3Title: 'Corporate Authority & Prestige',
+        f3Desc: 'Presence on Google Play Store and Apple App Store gives your company international solidity, increasing buyer confidence.',
+        f4Title: 'Fast Navigation & Offline Capability',
+        f4Desc: 'The App caches key resources for high-speed loading and offline access to catalogs even during poor connectivity.',
+        f5Title: 'Real-Time Automatic Sync',
+        f5Desc: 'No need to manage two platforms. Any update or product added to your website reflects instantly on the Mobile App.',
+        f6Title: 'Immersive User Experience',
+        f6Desc: 'Free from browser URL bars or third-party tab distractions. Users engage in a 100% brand-focused environment.',
+        stepsTitle: 'Simple Workflow',
+        stepsSubtitle: 'We launch your Mobile App through 3 structured steps.',
+        s1Title: '1. Submit Your Web URL',
+        s1Desc: 'Fill out the form with your website details for technical evaluation.',
+        s2Title: '2. We Build Your Demo',
+        s2Desc: 'We configure and package your mobile application with all optimization settings.',
+        s3Title: '3. Test & Publish',
+        s3Desc: 'Test your App for free for 7 days before we proceed with official App Store deployment.'
+      }
+    };
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'es' ? 'en' : 'es';
+      const t = translations[currentLang];
+
+      document.getElementById('langToggle').innerText = t.toggleBtn;
+      document.getElementById('badgeText').innerText = t.badgeText;
+      document.getElementById('heroTitle').innerText = t.heroTitle;
+      document.getElementById('heroSubtitle').innerText = t.heroSubtitle;
+      document.getElementById('formTitle').innerText = t.formTitle;
+      document.getElementById('formSubtitle').innerText = t.formSubtitle;
+      document.getElementById('labelCompany').innerText = t.labelCompany;
+      document.getElementById('labelWebsite').innerText = t.labelWebsite;
+      document.getElementById('labelEmail').innerText = t.labelEmail;
+      document.getElementById('btnSubmit').innerText = t.btnSubmit;
+      document.getElementById('formFooter').innerText = t.formFooter;
+      document.getElementById('featMainTitle').innerText = t.featMainTitle;
+      document.getElementById('featMainSubtitle').innerText = t.featMainSubtitle;
+      document.getElementById('f1Title').innerText = t.f1Title;
+      document.getElementById('f1Desc').innerText = t.f1Desc;
+      document.getElementById('f2Title').innerText = t.f2Title;
+      document.getElementById('f2Desc').innerText = t.f2Desc;
+      document.getElementById('f3Title').innerText = t.f3Title;
+      document.getElementById('f3Desc').innerText = t.f3Desc;
+      document.getElementById('f4Title').innerText = t.f4Title;
+      document.getElementById('f4Desc').innerText = t.f4Desc;
+      document.getElementById('f5Title').innerText = t.f5Title;
+      document.getElementById('f5Desc').innerText = t.f5Desc;
+      document.getElementById('f6Title').innerText = t.f6Title;
+      document.getElementById('f6Desc').innerText = t.f6Desc;
+      document.getElementById('stepsTitle').innerText = t.stepsTitle;
+      document.getElementById('stepsSubtitle').innerText = t.stepsSubtitle;
+      document.getElementById('s1Title').innerText = t.s1Title;
+      document.getElementById('s1Desc').innerText = t.s1Desc;
+      document.getElementById('s2Title').innerText = t.s2Title;
+      document.getElementById('s2Desc').innerText = t.s2Desc;
+      document.getElementById('s3Title').innerText = t.s3Title;
+      document.getElementById('s3Desc').innerText = t.s3Desc;
+    }
+  </script>
 </body>
-</html> 
+</html>
