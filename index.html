@@ -3,190 +3,350 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Móvil Social Marketing | Demo</title>
+  <title>Móvil Social Marketing | Demo Interactiva</title>
   
   <style>
-    /* Estilos corregidos para la barra de navegación y el logo */
+    /* RESET Y ESTILOS GENERALES */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* BARRA DE NAVEGACIÓN */
     .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 24px;
+      padding: 16px 32px;
       background-color: #0b0f19;
+      border-bottom: 1px solid #1f2937;
     }
 
     .navbar-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-decoration: none;
     }
 
-    /* Corrección del logo en la barra superior */
+    /* Corrección del logo: encaje perfecto sin fondo ni deformación */
     .navbar-brand img {
-      height: 36px;
+      height: 38px;
       width: auto;
       object-fit: contain;
       background: transparent;
-      border: none;
-      box-shadow: none;
+      border-radius: 50%;
     }
 
     .brand-text {
       color: #ffffff;
       font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 1.25rem;
+      letter-spacing: 1.5px;
     }
 
-    /* Ajuste responsivo para smartphones */
-    @media (max-width: 768px) {
-      .navbar-brand img {
-        height: 28px;
-      }
-      .brand-text {
-        font-size: 1rem;
-      }
-    }
-
-    /* Estilos para el formulario limpio */
-    .demo-section {
-      max-width: 600px;
+    /* FORMULARIO DE DEMO */
+    .demo-container {
+      max-width: 650px;
       margin: 40px auto;
-      padding: 30px;
+      padding: 32px;
       background-color: #111827;
-      border-radius: 12px;
+      border: 1px solid #1f2937;
+      border-radius: 16px;
       text-align: center;
-      font-family: system-ui, -apple-system, sans-serif;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    .demo-container h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 10px;
       color: #ffffff;
     }
 
-    .demo-section h2 {
-      margin-bottom: 8px;
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    .demo-section .subtitle {
+    .demo-container .subtitle {
       color: #9ca3af;
       font-size: 0.95rem;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 20px;
     }
 
     .form-group input {
       width: 100%;
-      padding: 12px 16px;
+      padding: 14px 18px;
       background-color: #1f2937;
       border: 1px solid #374151;
-      border-radius: 6px;
+      border-radius: 8px;
       color: #ffffff;
-      font-size: 0.9rem;
-      box-sizing: border-box;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
     }
 
-    .btn-primary {
+    .form-group input:focus {
+      border-color: #10b981;
+    }
+
+    .btn-submit {
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       background-color: #059669;
       color: #ffffff;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.2s;
     }
 
-    .btn-primary:hover {
+    .btn-submit:hover {
       background-color: #10b981;
     }
 
     .disclaimer {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: #6b7280;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
-    /* Estructura para el encabezado de propuestas enviadas por email */
-    .proposal-header {
+    /* SECCIÓN DE UTILIDADES ESTRATÉGICAS */
+    .features-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
       text-align: center;
-      padding: 20px;
-      background-color: #0b0f19;
     }
 
-    .proposal-header img {
-      width: 100px;
-      height: auto;
+    .features-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
     }
 
-    .proposal-header h1 {
-      margin: 10px 0 2px 0;
-      font-size: 20px;
+    .features-section .section-sub {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    .grid-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: left;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
       color: #ffffff;
-      letter-spacing: 2px;
     }
 
-    .proposal-header p {
-      margin: 0;
-      font-size: 12px;
+    .card p {
+      color: #9ca3af;
+      font-size: 0.88rem;
+    }
+
+    /* PROCESO DE TRABAJO */
+    .process-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px 40px 20px;
+      text-align: center;
+    }
+
+    .process-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      background-color: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px auto;
+      font-weight: bold;
+    }
+
+    /* PIE DE PÁGINA INSTITUCIONAL */
+    .footer-brand {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #070a12;
+      border-top: 1px solid #1f2937;
+      margin-top: 60px;
+    }
+
+    .footer-brand img {
+      height: 50px;
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand h3 {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
       color: #9ca3af;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    /* RESPONSIVO PARA MOVILES */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 12px 16px;
+      }
+      .navbar-brand img {
+        height: 30px;
+      }
+      .brand-text {
+        font-size: 1.05rem;
+      }
+      .demo-container {
+        margin: 20px 16px;
+        padding: 20px;
+      }
+      .demo-container h2 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. BARRA DE NAVEGACIÓN WEB / SMARTPHONE -->
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR (SOLO MSM EN TEXTO) -->
   <header class="navbar">
     <a href="#" class="navbar-brand">
-      <!-- Asegúrate de cambiar 'logo-msm-plano.png' por la ruta real de tu imagen vectorial plana sin fondo -->
-      <img src="logo-msm-plano.png" alt="MSM Isotipo" />
+      <img src="2. Documentos y Formularios Versión Vectorial Plana.jpg" alt="Logo MSM" />
       <span class="brand-text">MSM</span>
     </a>
   </header>
 
-  <!-- 2. FORMULARIO DE DEMO INTERACTIVA (SIN EMOJIS) -->
-  <section class="demo-section">
-    <h2>Solicita tu Demo Interactiva Gratis</h2>
-    <p class="subtitle">
-      Generamos una versión funcional de tu sitio web en una App para que la pruebes por 7 días.
-    </p>
+  <!-- FORMULARIO PRINCIPAL (TOTALMENTE LIMPIO DE EMOJIS) -->
+  <main>
+    <section class="demo-container">
+      <h2>Solicita tu Demo Interactiva Gratis</h2>
+      <p class="subtitle">
+        Generamos una versión funcional de tu sitio web en una App para que la pruebes por 7 días.
+      </p>
 
-    <form id="demo-form">
-      <div class="form-group">
-        <input type="text" placeholder="Nombre de la Empresa / Marca" required />
-        <input type="url" placeholder="URL de tu Sitio Web Actual" required />
+      <form id="demo-form">
+        <div class="form-group">
+          <input type="text" placeholder="Nombre de la Empresa / Marca" required />
+          <input type="url" placeholder="URL de tu Sitio Web Actual" required />
+          <input type="email" placeholder="Correo Electrónico Corporativo" required />
+        </div>
+
+        <button type="submit" class="btn-submit">
+          Solicitar App Demo Gratis
+        </button>
+      </form>
+
+      <p class="disclaimer">
+        Garantía de privacidad. Tu información está segura con nosotros.
+      </p>
+    </section>
+
+    <!-- SECCIÓN DE UTILIDADES ESTRATÉGICAS -->
+    <section class="features-section">
+      <h2>Utilidades Estratégicas para tu Negocio</h2>
+      <p class="section-sub">Tecnologías diseñadas para maximizar el valor de vida del cliente (LTV) y diferenciarte de la competencia.</p>
+
+      <div class="grid-features">
+        <div class="card">
+          <h3>Presencia Permanente en la Pantalla</h3>
+          <p>Ocupa un lugar privilegiado en el dispositivo de tu cliente. Estarás siempre visible a un toque de distancia.</p>
+        </div>
+        <div class="card">
+          <h3>Canal Directo de Notificaciones Push</h3>
+          <p>Envía ofertas, novedades o recordatorios directamente a la pantalla del usuario con altas tasas de apertura.</p>
+        </div>
+        <div class="card">
+          <h3>Autoridad y Confianza de Marca</h3>
+          <p>Publicar tu propia App transmite profesionalismo, modernidad y posiciona tu marca en el siguiente nivel.</p>
+        </div>
+        <div class="card">
+          <h3>Rendimiento Nivel App Nativa</h3>
+          <p>La App se ejecuta con velocidad y fluidez, garantizando una experiencia de navegación óptima.</p>
+        </div>
+        <div class="card">
+          <h3>Sincronización Automática en Vivo</h3>
+          <p>Cualquier cambio en tu sitio web se refleja de forma inmediata en la App sin trabajo doble.</p>
+        </div>
+        <div class="card">
+          <h3>Experiencia 100% Inmersiva</h3>
+          <p>Sin distracciones de navegadores web, manteniendo la atención del cliente enfocada en tu negocio.</p>
+        </div>
       </div>
-      <div class="form-group">
-        <input type="email" placeholder="Correo Electrónico Corporativo" required />
+    </section>
+
+    <!-- PROCESO DE TRABAJO -->
+    <section class="process-section">
+      <h2>Proceso de Trabajo Sencillo</h2>
+      <div class="process-grid">
+        <div class="card" style="text-align: center;">
+          <div class="step-number">1</div>
+          <h3>Envías la URL</h3>
+          <p>Ingresas la dirección de tu sitio web en el formulario.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="step-number">2</div>
+          <h3>Compilamos la Demo</h3>
+          <p>Generamos la versión nativa de tu aplicación móvil.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div class="step-number">3</div>
+          <h3>Pruebas y Publicas</h3>
+          <p>Despliegas tu aplicación directamente con tus clientes.</p>
+        </div>
       </div>
+    </section>
+  </main>
 
-      <button type="submit" class="btn-primary">
-        Solicitar App Demo Gratis
-      </button>
-    </form>
-
-    <p class="disclaimer">
-      Garantía de privacidad. Tu información está segura con nosotros.
-    </p>
-  </section>
-
-  <!-- 3. ENCABEZADO EXCLUSIVO PARA PROPUESTAS COMERCIALES Y EMAILS -->
-  <!-- Utiliza este bloque únicamente en las carátulas de correos o documentos donde se requiera la conjugación completa -->
-  <div class="proposal-header">
-    <img src="logo-msm-plano.png" alt="Logo MSM" />
-    <h1>MSM</h1>
+  <!-- PIE DE PÁGINA INSTITUCIONAL (RAZÓN SOCIAL COMPLETA) -->
+  <footer class="footer-brand">
+    <img src="2. Documentos y Formularios Versión Vectorial Plana.jpg" alt="Móvil Social Marketing Logo" />
+    <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
-  </div>
+  </footer>
 
 </body>
 </html>
