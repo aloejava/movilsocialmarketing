@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Móvil Social Marketing SAS | Web2App Solutions</title>
+    <style>
+        :root { --primary: #0d6efd; --dark: #121212; --light: #f8f9fa; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background: var(--light); color: var(--dark); }
+        nav { background: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo { height: 50px; }
+        .lang-btn { background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        header { background: var(--dark); color: white; padding: 3rem 1rem; text-align: center; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .card { background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 1rem; text-align: left; }
+        label { display: block; margin-bottom: 0.3rem; font-weight: bold; }
+        input { width: 100%; padding: 0.7rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button.submit { background: #198754; color: white; border: none; padding: 1rem; width: 100%; font-size: 1.1rem; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <!-- REEMPLAZA "logo.png" CON LA RUTA DE TU IMAGEN -->
+    <img src="logo.png" alt="Móvil Social Marketing" class="logo" id="app-logo">
+    <button class="lang-btn" onclick="toggleLanguage()">Switch to English</button>
+</nav>
+
+<header>
+    <h1 id="hero-title">Convierte tu Página Web en una App Móvil</h1>
+    <p id="hero-sub">Publica en Google Play y App Store. Aumenta tus ventas y retén a tus clientes con Notificaciones Push.</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2 id="form-title" style="text-align: center;">Solicita tu Demo Gratis de 7 Días</h2>
+        
+        <!-- Formulario configurado con Formspree -->
+        <form action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST">
+            <div class="form-group">
+                <label id="lbl-biz" for="biz">Nombre de tu Empresa / Business Name</label>
+                <input type="text" id="biz" name="business" required>
+            </div>
+            <div class="form-group">
+                <label id="lbl-web" for="web">URL de tu Sitio Web / Website URL</label>
+                <input type="url" id="web" name="website" required placeholder="https://tuweb.com">
+            </div>
+            <div class="form-group">
+                <label id="lbl-email" for="email">Correo Electrónico / Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" class="submit" id="btn-submit">Crear Mi App Demo Gratis</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    let currentLang = 'es';
+    function toggleLanguage() {
+        if (currentLang === 'es') {
+            document.getElementById('hero-title').innerText = "Turn Your Website Into a Mobile App";
+            document.getElementById('hero-sub').innerText = "Publish to Google Play & App Store. Increase sales with Push Notifications.";
+            document.getElementById('form-title').innerText = "Request Your 7-Day Free App Demo";
+            document.getElementById('btn-submit').innerText = "Build My Free Demo App";
+            document.querySelector('.lang-btn').innerText = "Cambiar a Español";
+            currentLang = 'en';
+        } else {
+            document.getElementById('hero-title').innerText = "Convierte tu Página Web en una App Móvil";
+            document.getElementById('hero-sub').innerText = "Publica en Google Play y App Store. Aumenta tus ventas y retén a tus clientes con Notificaciones Push.";
+            document.getElementById('form-title').innerText = "Solicita tu Demo Gratis de 7 Días";
+            document.getElementById('btn-submit').innerText = "Crear Mi App Demo Gratis";
+            document.querySelector('.lang-btn').innerText = "Switch to English";
+            currentLang = 'es';
+        }
+    }
+</script>
+
+</body>
+</html>
