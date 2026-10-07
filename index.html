@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --bg-card: #131c2e; /* Color exacto de tus tarjetas */
+      --bg-card: #131c2e;
       --primary: #3b82f6;
       --primary-glow: rgba(59, 130, 246, 0.4);
       --accent: #10b981;
@@ -45,14 +45,14 @@
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
     
-    /* SOLUCIÓN DEFINITIVA PARA LAS CUADRICULAS */
-    /* Esta línea pinta el fondo azul oscuro DETRÁS del logo transparente */
+    /* ESTILOS DEL LOGO CORREGIDOS */
     .brand img, footer img { 
       height: 48px; 
       width: auto; 
       object-fit: contain; 
       border-radius: 50%; 
-      background-color: var(--bg-card); /* <--- ESTO ELIMINA LAS CUADRICULAS */
+      /* Fondo de seguridad por si el PNG falla */
+      background-color: var(--bg-card); 
       padding: 4px; 
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
@@ -212,7 +212,7 @@
       border-top: 1px solid var(--border-dark); 
     }
     footer img { 
-      height: 64px; /* Logo footer más grande */
+      height: 64px; 
       margin-bottom: 1rem; 
     }
     footer h3 { font-size: 1.2rem; letter-spacing: 2px; color: #ffffff; margin-bottom: 0.2rem; }
@@ -232,8 +232,8 @@
   <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <!-- ASEGÚRATE QUE ESTE NOMBRE COINCIDA CON TU ARCHIVO EN GITHUB -->
-      <img src="logo_round_128x128_solid.png" alt="MSM Logo" />
+      <!-- CAMBIO REALIZADO: Nombre actualizado al archivo que veo en tu GitHub -->
+      <img src="logo_final_solid.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
@@ -352,8 +352,8 @@
 
   <!-- PIE DE PÁGINA INSTITUCIONAL -->
   <footer>
-    <!-- ASEGÚRATE QUE ESTE NOMBRE COINCIDA CON TU ARCHIVO EN GITHUB -->
-    <img src="logo_round_128x128_solid.png" alt="Móvil Social Marketing Logo" />
+    <!-- CAMBIO REALIZADO: Nombre actualizado al archivo que veo en tu GitHub -->
+    <img src="logo_final_solid.png" alt="Móvil Social Marketing Logo" />
     <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
   </footer>
@@ -428,17 +428,4 @@
       document.getElementById('f4Desc').innerText = t.f4Desc;
       document.getElementById('f5Title').innerText = t.f5Title;
       document.getElementById('f5Desc').innerText = t.f5Desc;
-      document.getElementById('f6Title').innerText = t.f6Title;
-      document.getElementById('f6Desc').innerText = t.f6Desc;
-      document.getElementById('stepsTitle').innerText = t.stepsTitle;
-      document.getElementById('stepsSubtitle').innerText = t.stepsSubtitle;
-      document.getElementById('s1Title').innerText = t.s1Title;
-      document.getElementById('s1Desc').innerText = t.s1Desc;
-      document.getElementById('s2Title').innerText = t.s2Title;
-      document.getElementById('s2Desc').innerText = t.s2Desc;
-      document.getElementById('s3Title').innerText = t.s3Title;
-      document.getElementById('s3Desc').innerText = t.s3Desc;
-    }
-  </script>
-</body>
-</html>
+      document.getElementById('f
