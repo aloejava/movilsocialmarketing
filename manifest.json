@@ -1,19 +1,8 @@
 {
-  "name": {
-    "default": "MSM - Web to App Platform",
-    "en": "MSM - Web to App Platform",
-    "es": "MSM - Plataforma Web a App"
-  },
-  "short_name": {
-    "default": "MSM",
-    "en": "MSM",
-    "es": "MSM"
-  },
-  "description": {
-    "default": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales.",
-    "en": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales.",
-    "es": "Convierte tu sitio web en una app móvil de alta conversión. Fideliza clientes, envía notificaciones push y aumenta tus ventas."
-  },
+  "id": "/",
+  "name": "MSM - Web to App Platform",
+  "short_name": "MSM",
+  "description": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales directly on your users' devices.",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#090d16",
@@ -28,13 +17,13 @@
       "src": "logo.png",
       "sizes": "128x128",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "logo-512.png",
@@ -43,25 +32,26 @@
       "purpose": "any maskable"
     }
   ],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-narrow.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
   "shortcuts": [
     {
-      "name": {
-        "default": "Request Demo",
-        "en": "Request Demo",
-        "es": "Solicitar Demo"
-      },
-      "short_name": {
-        "default": "Demo",
-        "en": "Demo",
-        "es": "Demo"
-      },
-      "description": {
-        "default": "Get your free interactive demo",
-        "en": "Get your free interactive demo",
-        "es": "Obtén tu demo interactiva gratis"
-      },
-      "url": "/index.html#form",
+      "name": "Request Demo",
+      "short_name": "Demo",
+      "description": "Get your free interactive demo",
+      "url": "/index.html",
       "icons": [
         {
           "src": "logo-192.png",
