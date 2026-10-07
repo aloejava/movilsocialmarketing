@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Móvil Social Marketing SAS | Plataforma Web2App</title>
+  <title>Móvil Social Marketing SAS | Plataforma Web to App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --bg-card: #131c2e; /* Color de fondo sólido para el logo */
+      --bg-card: #131c2e;
       --primary: #3b82f6;
       --primary-glow: rgba(59, 130, 246, 0.4);
       --accent: #10b981;
@@ -30,7 +30,6 @@
       overflow-x: hidden; 
     }
 
-    /* BARRA DE NAVEGACIÓN */
     nav {
       background: rgba(9, 13, 22, 0.95);
       backdrop-filter: blur(12px);
@@ -44,18 +43,15 @@
       z-index: 100;
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
-    
-    /* ESTILO DEL LOGO: Fondo sólido forzado + Borde redondo */
     .brand img, footer img { 
       height: 48px; 
       width: auto; 
       object-fit: contain; 
       border-radius: 50%; 
-      background-color: var(--bg-card); /* ELIMINA CUADRICULAS AUTOMÁTICAMENTE */
+      background-color: var(--bg-card);
       padding: 4px; 
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
-
     .brand-text { font-weight: 800; font-size: 1.35rem; letter-spacing: 1px; color: #ffffff; }
 
     .lang-btn {
@@ -71,7 +67,6 @@
     }
     .lang-btn:hover { border-color: var(--primary); box-shadow: 0 0 12px var(--primary-glow); }
 
-    /* HERO SECTION */
     .hero {
       position: relative;
       padding: 5rem 2rem 4rem;
@@ -105,7 +100,6 @@
     .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -1px; }
     .hero p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
 
-    /* MOCKUP SMARTPHONE 3D */
     .phone-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
     .phone-glow {
       position: absolute; width: 280px; height: 480px;
@@ -146,7 +140,6 @@
     .screen-card-push .title { font-size: 0.85rem; font-weight: 700; color: #34d399; margin-bottom: 0.2rem; }
     .screen-card-push .desc { font-size: 0.75rem; color: #e2e8f0; font-weight: 500; }
 
-    /* FORMULARIO */
     .form-wrapper { max-width: 850px; margin: -3.5rem auto 4.5rem; padding: 0 1.5rem; position: relative; z-index: 20; }
     .form-card {
       background: var(--bg-card); padding: 2.5rem; border-radius: 20px;
@@ -169,7 +162,6 @@
     .submit-btn:hover { background: #059669; transform: translateY(-2px); }
     .form-footer { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
 
-    /* UTILIDADES ESTRATÉGICAS */
     .features { padding: 3rem 2rem 5rem; max-width: 1200px; margin: 0 auto; }
     .section-title { text-align: center; margin-bottom: 3.5rem; }
     .section-title h2 { font-size: 2.4rem; font-weight: 800; color: #ffffff; margin-bottom: 0.6rem; }
@@ -189,7 +181,6 @@
     .card h3 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; }
     .card p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.65; }
 
-    /* PROCESO DE TRABAJO */
     .steps-bg { background: #0d1322; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); padding: 5rem 2rem; }
     .steps-container { max-width: 1050px; margin: 0 auto; }
     .step-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
@@ -202,7 +193,6 @@
     .step-item h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff; }
     .step-item p { color: var(--text-muted); font-size: 1.1rem; }
 
-    /* FOOTER INSTITUCIONAL */
     footer { 
       background: #05080e; 
       color: var(--text-muted); 
@@ -228,21 +218,18 @@
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <!-- RUTA ACTUALIZADA A LOGO.PNG -->
       <img src="logo.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
   </nav>
 
-  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-grid">
       <div class="hero-content">
-        <div class="badge" id="badgeText"><span class="badge-dot"></span> Plataforma Web2App Enterprise</div>
+        <div class="badge" id="badgeText"><span class="badge-dot"></span> Plataforma Web to App Enterprise</div>
         <h1 id="heroTitle">Convierte tu Sitio Web en una App Móvil de Alta Conversión</h1>
         <p id="heroSubtitle">Elimina las barreras de los navegadores web. Fideliza clientes, envía notificaciones sin costo e incrementa tus ventas directamente en el teléfono de tus usuarios.</p>
       </div>
@@ -268,7 +255,6 @@
     </div>
   </section>
 
-  <!-- FORMULARIO -->
   <div class="form-wrapper">
     <div class="form-card">
       <h2 id="formTitle">Solicita tu Demo Interactiva Gratis</h2>
@@ -294,7 +280,6 @@
     </div>
   </div>
 
-  <!-- UTILIDADES ESTRATÉGICAS -->
   <section class="features">
     <div class="section-title">
       <h2 id="featMainTitle">Utilidades Estratégicas para tu Negocio</h2>
@@ -334,7 +319,6 @@
     </div>
   </section>
 
-  <!-- PROCESO DE TRABAJO -->
   <section class="steps-bg">
     <div class="steps-container">
       <div class="section-title">
@@ -349,20 +333,17 @@
     </div>
   </section>
 
-  <!-- PIE DE PÁGINA INSTITUCIONAL -->
   <footer>
-    <!-- RUTA ACTUALIZADA A LOGO.PNG -->
     <img src="logo.png" alt="Móvil Social Marketing Logo" />
     <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
   </footer>
 
-  <!-- SCRIPT MULTILINGÜE -->
   <script>
     let currentLang = 'es';
     const translations = {
       es: {
-        toggleBtn: 'English', badgeText: 'Plataforma Web2App Enterprise',
+        toggleBtn: 'English', badgeText: 'Plataforma Web to App Enterprise',
         heroTitle: 'Convierte tu Sitio Web en una App Móvil de Alta Conversión',
         heroSubtitle: 'Elimina las barreras de los navegadores web. Fideliza clientes, envía notificaciones sin costo e incrementa tus ventas directamente en el teléfono de tus usuarios.',
         formTitle: 'Solicita tu Demo Interactiva Gratis', formSubtitle: 'Generamos una muestra funcional de tu sitio web convertido en App para que la pruebes por 7 días.',
@@ -381,7 +362,7 @@
         s3Title: '3. Pruebas y Publicas', s3Desc: 'Revisas la App por 7 días gratis y la desplegamos oficialmente en las tiendas.'
       },
       en: {
-        toggleBtn: 'Español', badgeText: 'Enterprise Web2App Platform',
+        toggleBtn: 'Español', badgeText: 'Enterprise Web to App Platform',
         heroTitle: 'Turn Your Website Into a High-Converting Mobile App',
         heroSubtitle: 'Break free from web browser limits. Retain customers, send free push notifications, and boost sales right on your users\' devices.',
         formTitle: 'Request Your Free Interactive Demo', formSubtitle: 'We generate a fully functional demo of your website turned into an App for a 7-day trial.',
