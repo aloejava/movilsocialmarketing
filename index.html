@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --bg-card: #131c2e; /* Color de fondo de tus tarjetas */
+      --bg-card: #131c2e; /* Color de fondo sólido para el logo */
       --primary: #3b82f6;
       --primary-glow: rgba(59, 130, 246, 0.4);
       --accent: #10b981;
@@ -45,14 +45,13 @@
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
     
-    /* SOLUCIÓN CSS PARA EL FONDO DEL LOGO */
-    /* Esto asegura que incluso si el PNG es transparente, tenga fondo azul */
+    /* ESTILO DEL LOGO: Fondo sólido forzado + Borde redondo */
     .brand img, footer img { 
       height: 48px; 
       width: auto; 
       object-fit: contain; 
       border-radius: 50%; 
-      background-color: var(--bg-card); /* <--- ESTO PINTA EL FONDO AZUL */
+      background-color: var(--bg-card); /* ELIMINA CUADRICULAS AUTOMÁTICAMENTE */
       padding: 4px; 
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
@@ -232,7 +231,7 @@
   <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <!-- CAMBIO CLAVE: Apuntando al archivo que SÍ existe en tu GitHub según la captura -->
+      <!-- RUTA ACTUALIZADA AL ARCHIVO CORRECTO -->
       <img src="logo_round_128x128_solid.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
@@ -352,7 +351,7 @@
 
   <!-- PIE DE PÁGINA INSTITUCIONAL -->
   <footer>
-    <!-- CAMBIO CLAVE: Apuntando al archivo que SÍ existe en tu GitHub según la captura -->
+    <!-- RUTA ACTUALIZADA AL ARCHIVO CORRECTO -->
     <img src="logo_round_128x128_solid.png" alt="Móvil Social Marketing Logo" />
     <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
