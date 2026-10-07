@@ -44,17 +44,18 @@
       z-index: 100;
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
-    .brand img { height: 40px; width: auto; object-fit: contain; border-radius: 50%; }
-    .brand-text { font-weight: 800; font-size: 1.25rem; letter-spacing: 1px; color: #ffffff; }
+    /* LOGO ACTUALIZADO: Mantiene forma redonda y tamaño adecuado para nav */
+    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 50%; }
+    .brand-text { font-weight: 800; font-size: 1.35rem; letter-spacing: 1px; color: #ffffff; }
 
     .lang-btn {
       background: var(--bg-card);
       color: var(--text-main);
       border: 1px solid var(--border-dark);
-      padding: 0.5rem 1.2rem;
+      padding: 0.6rem 1.4rem;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       cursor: pointer;
       transition: all 0.2s ease;
     }
@@ -82,17 +83,18 @@
       background: rgba(59, 130, 246, 0.15);
       color: #60a5fa;
       border: 1px solid rgba(96, 165, 250, 0.3);
-      padding: 0.4rem 1.1rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 50px;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
       margin-bottom: 1.25rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
     }
     .badge-dot { width: 8px; height: 8px; background: #60a5fa; border-radius: 50%; box-shadow: 0 0 8px #60a5fa; }
-    .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -1px; }
-    .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
+    .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -1px; }
+    /* TEXTO HERO AUMENTADO PARA MEJOR LECTURA */
+    .hero p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
 
     /* MOCKUP SMARTPHONE 3D */
     .phone-wrapper {
@@ -162,8 +164,8 @@
       padding: 0.9rem; 
       border-radius: 12px;
     }
-    .screen-card-push .title { font-size: 0.8rem; font-weight: 700; color: #34d399; margin-bottom: 0.2rem; }
-    .screen-card-push .desc { font-size: 0.72rem; color: #e2e8f0; font-weight: 500; }
+    .screen-card-push .title { font-size: 0.85rem; font-weight: 700; color: #34d399; margin-bottom: 0.2rem; }
+    .screen-card-push .desc { font-size: 0.75rem; color: #e2e8f0; font-weight: 500; }
 
     /* FORMULARIO */
     .form-wrapper { max-width: 850px; margin: -3.5rem auto 4.5rem; padding: 0 1.5rem; position: relative; z-index: 20; }
@@ -174,18 +176,18 @@
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
       border: 1px solid var(--border-dark);
     }
-    .form-card h2 { font-size: 1.7rem; font-weight: 800; color: #ffffff; text-align: center; margin-bottom: 0.4rem; }
-    .form-card p.subtitle { font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-bottom: 2rem; }
+    .form-card h2 { font-size: 1.8rem; font-weight: 800; color: #ffffff; text-align: center; margin-bottom: 0.4rem; }
+    .form-card p.subtitle { font-size: 1.05rem; color: var(--text-muted); text-align: center; margin-bottom: 2rem; }
 
     .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: #e2e8f0; margin-bottom: 0.5rem; }
+    .form-group label { display: block; font-size: 0.95rem; font-weight: 600; color: #e2e8f0; margin-bottom: 0.5rem; }
     .form-group input {
       width: 100%;
-      padding: 0.85rem 1rem;
+      padding: 0.9rem 1rem;
       background: #090d16;
       border: 1px solid var(--border-dark);
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: #ffffff;
       outline: none;
       transition: all 0.2s;
@@ -196,10 +198,10 @@
       width: 100%;
       background: var(--accent);
       color: #ffffff;
-      padding: 1rem;
+      padding: 1.1rem;
       border: none;
       border-radius: 8px;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 800;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -207,13 +209,13 @@
       box-shadow: 0 0 18px var(--accent-glow);
     }
     .submit-btn:hover { background: #059669; transform: translateY(-2px); }
-    .form-footer { font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
+    .form-footer { font-size: 0.9rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
 
     /* UTILIDADES ESTRATÉGICAS */
     .features { padding: 3rem 2rem 5rem; max-width: 1200px; margin: 0 auto; }
     .section-title { text-align: center; margin-bottom: 3.5rem; }
-    .section-title h2 { font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 0.6rem; }
-    .section-title p { color: var(--text-muted); font-size: 1.05rem; max-width: 680px; margin: 0 auto; }
+    .section-title h2 { font-size: 2.4rem; font-weight: 800; color: #ffffff; margin-bottom: 0.6rem; }
+    .section-title p { color: var(--text-muted); font-size: 1.15rem; max-width: 680px; margin: 0 auto; }
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.8rem; }
     .card {
@@ -238,8 +240,9 @@
     }
     .icon-box svg { width: 26px; height: 26px; fill: var(--primary); }
 
-    .card h3 { font-size: 1.3rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; }
-    .card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
+    /* TÍTULOS Y TEXTO DE TARJETAS AUMENTADOS */
+    .card h3 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; }
+    .card p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.65; }
 
     /* PROCESO DE TRABAJO */
     .steps-bg { background: #0d1322; border-top: 1px solid var(--border-dark); border-bottom: 1px solid var(--border-dark); padding: 5rem 2rem; }
@@ -260,8 +263,8 @@
       margin: 0 auto 1.25rem;
       box-shadow: 0 0 18px var(--primary-glow);
     }
-    .step-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff; }
-    .step-item p { color: var(--text-muted); font-size: 0.95rem; }
+    .step-item h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; color: #fff; }
+    .step-item p { color: var(--text-muted); font-size: 1.1rem; }
 
     /* FOOTER INSTITUCIONAL */
     footer { 
@@ -271,14 +274,15 @@
       padding: 3rem 2rem; 
       border-top: 1px solid var(--border-dark); 
     }
-    footer img { height: 46px; width: auto; margin-bottom: 0.8rem; border-radius: 50%; }
-    footer h3 { font-size: 1.1rem; letter-spacing: 2px; color: #ffffff; margin-bottom: 0.2rem; }
-    footer p { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+    /* LOGO FOOTER ACTUALIZADO */
+    footer img { height: 56px; width: auto; margin-bottom: 0.8rem; border-radius: 50%; }
+    footer h3 { font-size: 1.2rem; letter-spacing: 2px; color: #ffffff; margin-bottom: 0.2rem; }
+    footer p { font-size: 0.95rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
 
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-content { text-align: center; }
-      .hero h1 { font-size: 2.2rem; }
+      .hero h1 { font-size: 2.4rem; }
       .phone-wrapper { margin-top: 1.5rem; }
       nav { padding: 1rem 1.5rem; }
     }
@@ -289,7 +293,8 @@
   <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <img src="2. Documentos y Formularios Versión Vectorial Plana.jpg" alt="MSM Logo" />
+      <!-- LOGO CIRCULAR ACTUALIZADO -->
+      <img src="logo_round_128x128.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
@@ -454,7 +459,8 @@
 
   <!-- PIE DE PÁGINA INSTITUCIONAL -->
   <footer>
-    <img src="2. Documentos y Formularios Versión Vectorial Plana.jpg" alt="Móvil Social Marketing Logo" />
+    <!-- LOGO CIRCULAR ACTUALIZADO -->
+    <img src="logo_round_128x128.png" alt="Móvil Social Marketing Logo" />
     <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
   </footer>
