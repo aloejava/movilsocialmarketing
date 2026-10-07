@@ -1,12 +1,16 @@
 {
-  "name": "Móvil Social Marketing SAS - Plataforma Web2App",
-  "short_name": "MSM Web2App",
-  "description": "Convierte tu Sitio Web en una App Móvil de Alta Conversión",
-  "start_url": "/",
+  "name": "Móvil Social Marketing SAS - Plataforma Web to App",
+  "short_name": "MSM",
+  "description": "Convierte tu Sitio Web en una App Móvil de Alta Conversión. Fideliza clientes, envía notificaciones push sin costo e incrementa tus ventas.",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#090d16",
   "theme_color": "#090d16",
   "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es-ES",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "marketing"],
   "icons": [
     {
       "src": "logo.png",
@@ -27,7 +31,23 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity"],
-  "lang": "es",
-  "dir": "ltr"
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Solicitar Demo",
+      "short_name": "Demo",
+      "description": "Solicita tu demo interactiva gratis",
+      "url": "/index.html#form",
+      "icons": [{"src": "logo-192.png", "sizes": "192x192"}]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
