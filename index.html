@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --bg-card: #131c2e;
+      --bg-card: #131c2e; /* Color de fondo de tus tarjetas */
       --primary: #3b82f6;
       --primary-glow: rgba(59, 130, 246, 0.4);
       --accent: #10b981;
@@ -45,14 +45,14 @@
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
     
-    /* ESTILOS DEL LOGO CORREGIDOS */
+    /* SOLUCIÓN CSS PARA EL FONDO DEL LOGO */
+    /* Esto asegura que incluso si el PNG es transparente, tenga fondo azul */
     .brand img, footer img { 
       height: 48px; 
       width: auto; 
       object-fit: contain; 
       border-radius: 50%; 
-      /* Fondo de seguridad por si el PNG falla */
-      background-color: var(--bg-card); 
+      background-color: var(--bg-card); /* <--- ESTO PINTA EL FONDO AZUL */
       padding: 4px; 
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
@@ -232,8 +232,8 @@
   <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <!-- CAMBIO REALIZADO: Nombre actualizado al archivo que veo en tu GitHub -->
-      <img src="logo_final_solid.png" alt="MSM Logo" />
+      <!-- CAMBIO CLAVE: Apuntando al archivo que SÍ existe en tu GitHub según la captura -->
+      <img src="logo_round_128x128_solid.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
@@ -352,8 +352,8 @@
 
   <!-- PIE DE PÁGINA INSTITUCIONAL -->
   <footer>
-    <!-- CAMBIO REALIZADO: Nombre actualizado al archivo que veo en tu GitHub -->
-    <img src="logo_final_solid.png" alt="Móvil Social Marketing Logo" />
+    <!-- CAMBIO CLAVE: Apuntando al archivo que SÍ existe en tu GitHub según la captura -->
+    <img src="logo_round_128x128_solid.png" alt="Móvil Social Marketing Logo" />
     <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
   </footer>
@@ -428,4 +428,17 @@
       document.getElementById('f4Desc').innerText = t.f4Desc;
       document.getElementById('f5Title').innerText = t.f5Title;
       document.getElementById('f5Desc').innerText = t.f5Desc;
-      document.getElementById('f
+      document.getElementById('f6Title').innerText = t.f6Title;
+      document.getElementById('f6Desc').innerText = t.f6Desc;
+      document.getElementById('stepsTitle').innerText = t.stepsTitle;
+      document.getElementById('stepsSubtitle').innerText = t.stepsSubtitle;
+      document.getElementById('s1Title').innerText = t.s1Title;
+      document.getElementById('s1Desc').innerText = t.s1Desc;
+      document.getElementById('s2Title').innerText = t.s2Title;
+      document.getElementById('s2Desc').innerText = t.s2Desc;
+      document.getElementById('s3Title').innerText = t.s3Title;
+      document.getElementById('s3Desc').innerText = t.s3Desc;
+    }
+  </script>
+</body>
+</html>
