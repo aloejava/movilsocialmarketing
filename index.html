@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --bg-card: #131c2e; /* Color de fondo para el logo */
+      --bg-card: #131c2e; /* Color exacto de tus tarjetas */
       --primary: #3b82f6;
       --primary-glow: rgba(59, 130, 246, 0.4);
       --accent: #10b981;
@@ -45,14 +45,15 @@
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
     
-    /* CORRECCIÓN DEFINITIVA DEL LOGO: Fondo sólido forzado por CSS */
+    /* SOLUCIÓN DEFINITIVA PARA LAS CUADRICULAS */
+    /* Esta línea pinta el fondo azul oscuro DETRÁS del logo transparente */
     .brand img, footer img { 
       height: 48px; 
       width: auto; 
       object-fit: contain; 
       border-radius: 50%; 
-      background-color: var(--bg-card); /* Elimina las cuadriculas */
-      padding: 4px; /* Pequeño margen interno para que respire */
+      background-color: var(--bg-card); /* <--- ESTO ELIMINA LAS CUADRICULAS */
+      padding: 4px; 
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
@@ -210,9 +211,8 @@
       padding: 3rem 2rem; 
       border-top: 1px solid var(--border-dark); 
     }
-    /* Ajuste específico para el logo del footer */
     footer img { 
-      height: 64px; /* Un poco más grande que en el nav */
+      height: 64px; /* Logo footer más grande */
       margin-bottom: 1rem; 
     }
     footer h3 { font-size: 1.2rem; letter-spacing: 2px; color: #ffffff; margin-bottom: 0.2rem; }
@@ -232,7 +232,7 @@
   <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <!-- LOGO ACTUALIZADO -->
+      <!-- ASEGÚRATE QUE ESTE NOMBRE COINCIDA CON TU ARCHIVO EN GITHUB -->
       <img src="logo_round_128x128_solid.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
@@ -318,127 +318,4 @@
         <p id="f3Desc">Publicar tu propia App en Google Play y App Store transmite solidez internacional, incrementando la conversión en ventas de nuevos usuarios.</p>
       </div>
       <div class="card">
-        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div>
-        <h3 id="f4Title">Rendimiento Nivel App Nativa</h3>
-        <p id="f4Desc">La App aprovecha el hardware del smartphone almacenando caché para ofrecer una navegación fluida, incluso con conexiones débiles.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg></div>
-        <h3 id="f5Title">Sincronización Automática en Vivo</h3>
-        <p id="f5Desc">Mantenimiento cero. Todo cambio, producto o artículo que actualices en tu sitio web se verá reflejado inmediatamente en la App.</p>
-      </div>
-      <div class="card">
-        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
-        <h3 id="f6Title">Experiencia 100% Inmersiva</h3>
-        <p id="f6Desc">Sin barra de navegación, pestañas ni distracciones. Entorno controlado pensado exclusivamente para llevar al cliente hacia la conversión.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESO DE TRABAJO -->
-  <section class="steps-bg">
-    <div class="steps-container">
-      <div class="section-title">
-        <h2 id="stepsTitle">Proceso de Trabajo Sencillo</h2>
-        <p id="stepsSubtitle">En 3 sencillos pasos ponemos tu aplicación en marcha.</p>
-      </div>
-      <div class="step-list">
-        <div class="step-item"><div class="step-num">1</div><h3 id="s1Title">1. Envías la URL</h3><p id="s1Desc">Ingresas la dirección web de tu negocio en nuestro formulario técnico.</p></div>
-        <div class="step-item"><div class="step-num">2</div><h3 id="s2Title">2. Compilamos la Demo</h3><p id="s2Desc">Generamos la versión móvil empaquetada con optimizaciones avanzadas.</p></div>
-        <div class="step-item"><div class="step-num">3</div><h3 id="s3Title">3. Pruebas y Publicas</h3><p id="s3Desc">Revisas la App por 7 días gratis y la desplegamos oficialmente en las tiendas.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PIE DE PÁGINA INSTITUCIONAL -->
-  <footer>
-    <!-- LOGO FOOTER ACTUALIZADO -->
-    <img src="logo_round_128x128_solid.png" alt="Móvil Social Marketing Logo" />
-    <h3>MSM</h3>
-    <p>Móvil Social Marketing SAS</p>
-  </footer>
-
-  <!-- SCRIPT MULTILINGÜE -->
-  <script>
-    let currentLang = 'es';
-    const translations = {
-      es: {
-        toggleBtn: 'English', badgeText: 'Plataforma Web2App Enterprise',
-        heroTitle: 'Convierte tu Sitio Web en una App Móvil de Alta Conversión',
-        heroSubtitle: 'Elimina las barreras de los navegadores web. Fideliza clientes, envía notificaciones sin costo e incrementa tus ventas directamente en el teléfono de tus usuarios.',
-        formTitle: 'Solicita tu Demo Interactiva Gratis', formSubtitle: 'Generamos una muestra funcional de tu sitio web convertido en App para que la pruebes por 7 días.',
-        labelCompany: 'Nombre de tu Empresa / Marca', labelWebsite: 'URL de tu Sitio Web Actual', labelEmail: 'Correo Electrónico Corporativo',
-        btnSubmit: 'Solicitar App Demo Gratis', formFooter: 'Garantía de privacidad. Proceso sin costo ni tarjeta de crédito.',
-        featMainTitle: 'Utilidades Estratégicas para tu Negocio', featMainSubtitle: 'Tecnología diseñada para maximizar el valor de vida del cliente (LTV) y diferenciarte de la competencia.',
-        f1Title: 'Presencia Permanente en la Pantalla', f1Desc: 'Ocupa un lugar privilegiado en el teléfono de tu cliente. Cero intermediarios: tu logo siempre visible a un toque de distancia.',
-        f2Title: 'Canal Directo de Notificaciones Push', f2Desc: 'Comunica ofertas, novedades o recordatorios al instante. Tasas de apertura del 90%, superando con creces al correo tradicional.',
-        f3Title: 'Autoridad y Confianza de Marca', f3Desc: 'Publicar tu propia App en Google Play y App Store transmite solidez internacional, incrementando la conversión en ventas de nuevos usuarios.',
-        f4Title: 'Rendimiento Nivel App Nativa', f4Desc: 'La App aprovecha el hardware del smartphone almacenando caché para ofrecer una navegación fluida, incluso con conexiones débiles.',
-        f5Title: 'Sincronización Automática en Vivo', f5Desc: 'Mantenimiento cero. Todo cambio, producto o artículo que actualices en tu sitio web se verá reflejado inmediatamente en la App.',
-        f6Title: 'Experiencia 100% Inmersiva', f6Desc: 'Sin barra de navegación, pestañas ni distracciones. Entorno controlado pensado exclusivamente para llevar al cliente hacia la conversión.',
-        stepsTitle: 'Proceso de Trabajo Sencillo', stepsSubtitle: 'En 3 sencillos pasos ponemos tu aplicación en marcha.',
-        s1Title: '1. Envías la URL', s1Desc: 'Ingresas la dirección web de tu negocio en nuestro formulario técnico.',
-        s2Title: '2. Compilamos la Demo', s2Desc: 'Generamos la versión móvil empaquetada con optimizaciones avanzadas.',
-        s3Title: '3. Pruebas y Publicas', s3Desc: 'Revisas la App por 7 días gratis y la desplegamos oficialmente en las tiendas.'
-      },
-      en: {
-        toggleBtn: 'Español', badgeText: 'Enterprise Web2App Platform',
-        heroTitle: 'Turn Your Website Into a High-Converting Mobile App',
-        heroSubtitle: 'Break free from web browser limits. Retain customers, send free push notifications, and boost sales right on your users\' devices.',
-        formTitle: 'Request Your Free Interactive Demo', formSubtitle: 'We generate a fully functional demo of your website turned into an App for a 7-day trial.',
-        labelCompany: 'Company / Brand Name', labelWebsite: 'Current Website URL', labelEmail: 'Corporate Email Address',
-        btnSubmit: 'Request Free Demo App', formFooter: 'Privacy Guaranteed. No cost or credit card required.',
-        featMainTitle: 'Strategic Utility for Your Business', featMainSubtitle: 'Engineered to maximize Customer Lifetime Value (LTV) and stand out from competitors.',
-        f1Title: 'Permanent Home Screen Presence', f1Desc: 'Take prime real estate on your customer\'s phone. Zero middlemen: your logo is always one tap away.',
-        f2Title: 'Direct Push Notification Channel', f2Desc: 'Deliver instant promos, news, and reminders. 90% open rates that dwarf traditional email marketing.',
-        f3Title: 'Brand Authority & Trust', f3Desc: 'Publishing your App on Google Play and Apple App Store projects international prestige, boosting initial purchase conversions.',
-        f4Title: 'Native-Level Performance', f4Desc: 'Leverages device hardware caching for ultra-fast loading speeds, even on low-connectivity networks.',
-        f5Title: 'Real-Time Auto Sync', f5Desc: 'Zero maintenance required. Any update, product, or post made on your website updates automatically in the App.',
-        f6Title: '100% Immersive Experience', f6Desc: 'No browser address bars, tabs, or third-party distractions. A dedicated environment focused solely on conversions.',
-        stepsTitle: 'Simple Workflow', stepsSubtitle: 'Get your application up and running in 3 structured steps.',
-        s1Title: '1. Submit Your Web URL', s1Desc: 'Provide your business URL in our technical evaluation form.',
-        s2Title: '2. We Build the Demo', s2Desc: 'We package and compile your mobile version with advanced optimizations.',
-        s3Title: '3. Test & Launch', s3Desc: 'Test your App free for 7 days before we publish it to official App Stores.'
-      }
-    };
-
-    function toggleLanguage() {
-      currentLang = currentLang === 'es' ? 'en' : 'es';
-      const t = translations[currentLang];
-      document.getElementById('langToggle').innerText = t.toggleBtn;
-      document.getElementById('badgeText').innerHTML = `<span class="badge-dot"></span> ${t.badgeText}`;
-      document.getElementById('heroTitle').innerText = t.heroTitle;
-      document.getElementById('heroSubtitle').innerText = t.heroSubtitle;
-      document.getElementById('formTitle').innerText = t.formTitle;
-      document.getElementById('formSubtitle').innerText = t.formSubtitle;
-      document.getElementById('labelCompany').innerText = t.labelCompany;
-      document.getElementById('labelWebsite').innerText = t.labelWebsite;
-      document.getElementById('labelEmail').innerText = t.labelEmail;
-      document.getElementById('btnSubmit').innerText = t.btnSubmit;
-      document.getElementById('formFooter').innerText = t.formFooter;
-      document.getElementById('featMainTitle').innerText = t.featMainTitle;
-      document.getElementById('featMainSubtitle').innerText = t.featMainSubtitle;
-      document.getElementById('f1Title').innerText = t.f1Title;
-      document.getElementById('f1Desc').innerText = t.f1Desc;
-      document.getElementById('f2Title').innerText = t.f2Title;
-      document.getElementById('f2Desc').innerText = t.f2Desc;
-      document.getElementById('f3Title').innerText = t.f3Title;
-      document.getElementById('f3Desc').innerText = t.f3Desc;
-      document.getElementById('f4Title').innerText = t.f4Title;
-      document.getElementById('f4Desc').innerText = t.f4Desc;
-      document.getElementById('f5Title').innerText = t.f5Title;
-      document.getElementById('f5Desc').innerText = t.f5Desc;
-      document.getElementById('f6Title').innerText = t.f6Title;
-      document.getElementById('f6Desc').innerText = t.f6Desc;
-      document.getElementById('stepsTitle').innerText = t.stepsTitle;
-      document.getElementById('stepsSubtitle').innerText = t.stepsSubtitle;
-      document.getElementById('s1Title').innerText = t.s1Title;
-      document.getElementById('s1Desc').innerText = t.s1Desc;
-      document.getElementById('s2Title').innerText = t.s2Title;
-      document.getElementById('s2Desc').innerText = t.s2Desc;
-      document.getElementById('s3Title').innerText = t.s3Title;
-      document.getElementById('s3Desc').innerText = t.s3Desc;
-    }
-  </script>
-</body>
-</html>
+        <div class
