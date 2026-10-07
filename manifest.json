@@ -1,16 +1,28 @@
 {
-  "name": "Móvil Social Marketing SAS - Plataforma Web to App",
-  "short_name": "MSM",
-  "description": "Convierte tu Sitio Web en una App Móvil de Alta Conversión. Fideliza clientes, envía notificaciones push sin costo e incrementa tus ventas.",
+  "name": {
+    "default": "MSM - Web to App Platform",
+    "en": "MSM - Web to App Platform",
+    "es": "MSM - Plataforma Web a App"
+  },
+  "short_name": {
+    "default": "MSM",
+    "en": "MSM",
+    "es": "MSM"
+  },
+  "description": {
+    "default": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales.",
+    "en": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales.",
+    "es": "Convierte tu sitio web en una app móvil de alta conversión. Fideliza clientes, envía notificaciones push y aumenta tus ventas."
+  },
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#090d16",
   "theme_color": "#090d16",
   "orientation": "portrait-primary",
   "scope": "/",
-  "lang": "es-ES",
+  "lang": "en",
   "dir": "ltr",
-  "categories": ["business", "productivity", "marketing"],
+  "categories": ["business", "productivity", "marketing", "enterprise"],
   "icons": [
     {
       "src": "logo.png",
@@ -34,11 +46,28 @@
   "screenshots": [],
   "shortcuts": [
     {
-      "name": "Solicitar Demo",
-      "short_name": "Demo",
-      "description": "Solicita tu demo interactiva gratis",
+      "name": {
+        "default": "Request Demo",
+        "en": "Request Demo",
+        "es": "Solicitar Demo"
+      },
+      "short_name": {
+        "default": "Demo",
+        "en": "Demo",
+        "es": "Demo"
+      },
+      "description": {
+        "default": "Get your free interactive demo",
+        "en": "Get your free interactive demo",
+        "es": "Obtén tu demo interactiva gratis"
+      },
       "url": "/index.html#form",
-      "icons": [{"src": "logo-192.png", "sizes": "192x192"}]
+      "icons": [
+        {
+          "src": "logo-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ],
   "share_target": {
@@ -49,5 +78,7 @@
       "text": "text",
       "url": "url"
     }
-  }
+  },
+  "related_applications": [],
+  "prefer_related_applications": false
 }
