@@ -1,24 +1,33 @@
 {
-  "name": "Móvil Social Marketing SAS",
-  "short_name": "MSM",
-  "description": "Plataforma Web2App Enterprise de Móvil Social Marketing SAS",
-  "start_url": "/msm/",
+  "name": "Móvil Social Marketing SAS - Plataforma Web2App",
+  "short_name": "MSM Web2App",
+  "description": "Convierte tu Sitio Web en una App Móvil de Alta Conversión",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#090d16",
   "theme_color": "#090d16",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "2. Documentos y Formularios Versión Vectorial Plana.jpg",
-      "sizes": "192x192",
-      "type": "image/jpeg",
+      "src": "logo.png",
+      "sizes": "128x128",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "2. Documentos y Formularios Versión Vectorial Plana.jpg",
+      "src": "logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "es",
+  "dir": "ltr"
 }
