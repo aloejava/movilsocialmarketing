@@ -1,0 +1,22 @@
+{
+  "name": "Móvil Social Marketing SAS",
+  "short_name": "MSM",
+  "description": "Plataforma Web2App Enterprise de Móvil Social Marketing SAS",
+  "start_url": "/msm/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "2. Documentos y Formularios Versión Vectorial Plana.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "2. Documentos y Formularios Versión Vectorial Plana.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
