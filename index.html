@@ -11,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #090d16;
-      --bg-card: #131c2e;
+      --bg-card: #131c2e; /* Color de fondo para el logo */
       --primary: #3b82f6;
       --primary-glow: rgba(59, 130, 246, 0.4);
       --accent: #10b981;
@@ -32,7 +32,7 @@
 
     /* BARRA DE NAVEGACIÓN */
     nav {
-      background: rgba(9, 13, 22, 0.9);
+      background: rgba(9, 13, 22, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-dark);
       padding: 1rem 2.5rem;
@@ -44,8 +44,18 @@
       z-index: 100;
     }
     .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--text-main); }
-    /* LOGO ACTUALIZADO CON FONDO SÓLIDO */
-    .brand img { height: 48px; width: auto; object-fit: contain; border-radius: 50%; background-color: var(--bg-card); padding: 2px; }
+    
+    /* CORRECCIÓN DEFINITIVA DEL LOGO: Fondo sólido forzado por CSS */
+    .brand img, footer img { 
+      height: 48px; 
+      width: auto; 
+      object-fit: contain; 
+      border-radius: 50%; 
+      background-color: var(--bg-card); /* Elimina las cuadriculas */
+      padding: 4px; /* Pequeño margen interno para que respire */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
     .brand-text { font-weight: 800; font-size: 1.35rem; letter-spacing: 1px; color: #ffffff; }
 
     .lang-btn {
@@ -93,7 +103,6 @@
     }
     .badge-dot { width: 8px; height: 8px; background: #60a5fa; border-radius: 50%; box-shadow: 0 0 8px #60a5fa; }
     .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; letter-spacing: -1px; }
-    /* TEXTO HERO AUMENTADO */
     .hero p { font-size: 1.3rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
 
     /* MOCKUP SMARTPHONE 3D */
@@ -177,7 +186,6 @@
       display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;
     }
     .icon-box svg { width: 26px; height: 26px; fill: var(--primary); }
-    /* TÍTULOS Y TEXTO DE TARJETAS AUMENTADOS */
     .card h3 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; }
     .card p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.65; }
 
@@ -195,9 +203,18 @@
     .step-item p { color: var(--text-muted); font-size: 1.1rem; }
 
     /* FOOTER INSTITUCIONAL */
-    footer { background: #05080e; color: var(--text-muted); text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-dark); }
-    /* LOGO FOOTER CON FONDO SÓLIDO */
-    footer img { height: 56px; width: auto; margin-bottom: 0.8rem; border-radius: 50%; background-color: var(--bg-card); padding: 3px; }
+    footer { 
+      background: #05080e; 
+      color: var(--text-muted); 
+      text-align: center; 
+      padding: 3rem 2rem; 
+      border-top: 1px solid var(--border-dark); 
+    }
+    /* Ajuste específico para el logo del footer */
+    footer img { 
+      height: 64px; /* Un poco más grande que en el nav */
+      margin-bottom: 1rem; 
+    }
     footer h3 { font-size: 1.2rem; letter-spacing: 2px; color: #ffffff; margin-bottom: 0.2rem; }
     footer p { font-size: 0.95rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -215,14 +232,14 @@
   <!-- BARRA DE NAVEGACIÓN -->
   <nav>
     <a href="#" class="brand">
-      <!-- LOGO CIRCULAR ACTUALIZADO -->
+      <!-- LOGO ACTUALIZADO -->
       <img src="logo_round_128x128_solid.png" alt="MSM Logo" />
       <span class="brand-text">MSM</span>
     </a>
     <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">English</button>
   </nav>
 
-  <!-- HERO SECTION CON SMARTPHONE 3D -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-grid">
       <div class="hero-content">
@@ -231,7 +248,6 @@
         <p id="heroSubtitle">Elimina las barreras de los navegadores web. Fideliza clientes, envía notificaciones sin costo e incrementa tus ventas directamente en el teléfono de tus usuarios.</p>
       </div>
 
-      <!-- MOCKUP SMARTPHONE 3D -->
       <div class="phone-wrapper">
         <div class="phone-glow"></div>
         <div class="phone-container">
@@ -336,7 +352,7 @@
 
   <!-- PIE DE PÁGINA INSTITUCIONAL -->
   <footer>
-    <!-- LOGO CIRCULAR ACTUALIZADO -->
+    <!-- LOGO FOOTER ACTUALIZADO -->
     <img src="logo_round_128x128_solid.png" alt="Móvil Social Marketing Logo" />
     <h3>MSM</h3>
     <p>Móvil Social Marketing SAS</p>
