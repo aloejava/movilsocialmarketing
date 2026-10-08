@@ -1,4 +1,5 @@
 {
+  "id": "/msm-web2app-platform",
   "name": "MSM - Web to App Platform",
   "short_name": "MSM",
   "description": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales directly on your users' devices.",
@@ -10,7 +11,7 @@
   "scope": "/",
   "lang": "en",
   "dir": "ltr",
-  "categories": ["business", "productivity", "marketing", "enterprise"],
+  "categories": ["business", "productivity", "marketing"],
   "icons": [
     {
       "src": "logo.png",
@@ -44,5 +45,14 @@
         }
       ]
     }
-  ]
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }
