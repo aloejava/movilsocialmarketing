@@ -1,32 +1,32 @@
 {
-  "id": "/msm-web2app-platform",
+  "id": "/msm/",
   "name": "MSM - Web to App Platform",
   "short_name": "MSM",
-  "description": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales directly on your users' devices.",
-  "start_url": "/index.html",
+  "description": "Convert your website into a high-converting mobile app.",
+  "start_url": "/msm/index.html",
+  "scope": "/msm/",
   "display": "standalone",
   "background_color": "#090d16",
   "theme_color": "#090d16",
   "orientation": "portrait-primary",
-  "scope": "/",
   "lang": "en",
   "dir": "ltr",
   "categories": ["business", "productivity", "marketing"],
   "icons": [
     {
-      "src": "logo.png",
+      "src": "/msm/logo.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "logo-192.png",
+      "src": "/msm/logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "logo-512.png",
+      "src": "/msm/logo-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -37,17 +37,31 @@
       "name": "Request Demo",
       "short_name": "Demo",
       "description": "Get your free interactive demo",
-      "url": "/index.html",
+      "url": "/msm/index.html",
       "icons": [
         {
-          "src": "logo-192.png",
+          "src": "/msm/logo-192.png",
           "sizes": "192x192"
         }
       ]
     }
   ],
+  "screenshots": [
+    {
+      "src": "/msm/captura-ancha.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/msm/captura-estrecha.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
   "share_target": {
-    "action": "/share",
+    "action": "/msm/share",
     "method": "GET",
     "params": {
       "title": "title",
