@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#090d16">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
   <title>Móvil Social Marketing SAS | Plataforma Web to App</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#090d16">
   
   <style>
     :root {
@@ -225,6 +220,36 @@
 </head>
 <body>
 
+  <!-- SCRIPT DE PRUEBA DE 7 DÍAS (Automático con localStorage) -->
+  <script>
+  (function() {
+      const diasPrueba = 7;
+      const claveAlmacenamiento = 'msm_demo_inicio_' + window.location.hostname;
+      let fechaInicio = localStorage.getItem(claveAlmacenamiento);
+
+      if (!fechaInicio) {
+          fechaInicio = new Date().getTime();
+          localStorage.setItem(claveAlmacenamiento, fechaInicio);
+      }
+
+      const hoy = new Date().getTime();
+      const diasTranscurridos = Math.ceil((hoy - fechaInicio) / (1000 * 3600 * 24));
+
+      if (diasTranscurridos >= diasPrueba) {
+          window.location.href = 'https://aloejava.github.io/msm/prueba-expirada.html';
+      } 
+      else if (diasTranscurridos >= 5) {
+          const diasRestantes = diasPrueba - diasTranscurridos;
+          document.addEventListener("DOMContentLoaded", function() {
+              const banner = document.createElement('div');
+              banner.innerHTML = ` Tu prueba gratuita finaliza en ${diasRestantes} día(s). <a href="https://wa.me/573000000000" style="color:#ffffff; font-weight:bold; text-decoration:underline; margin-left:10px;">Contratar Plan Completo</a>`;
+              banner.style.cssText = "position:fixed; top:0; left:0; width:100%; background:#b91c1c; color:white; text-align:center; padding:12px; z-index:99999; font-family:sans-serif; font-weight:bold; font-size:14px; box-shadow: 0 2px 10px rgba(0,0,0,0.5);";
+              document.body.prepend(banner);
+          });
+      }
+  })();
+  </script>
+
   <nav>
     <a href="#" class="brand">
       <img src="logo.png" alt="MSM Logo" />
@@ -280,6 +305,10 @@
             <label for="email" id="labelEmail">Correo Electrónico Corporativo</label>
             <input type="email" id="email" name="email" placeholder="contacto@tuempresa.com" required>
           </div>
+          <div class="form-group">
+            <label for="whatsapp" id="labelWhatsapp">WhatsApp (Opcional)</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 000 0000">
+          </div>
         </div>
         <button type="submit" class="submit-btn" id="btnSubmit">Solicitar App Demo Gratis</button>
       </form>
@@ -300,8 +329,8 @@
       </div>
       <div class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div>
-        <h3 id="f2Title">Canal Directo de Notificaciones Push</h3>
-        <p id="f2Desc">Comunica ofertas, novedades o recordatorios al instante. Tasas de apertura del 90%, superando con creces al correo tradicional.</p>
+        <h3 id="f2Title">Canal Directo de Notificaciones Push y Redes Sociales</h3>
+        <p id="f2Desc">Comunica ofertas, novedades o recordatorios al instante a tu app y redes sociales. Tasas de apertura del 90%, superando con creces al correo tradicional.</p>
       </div>
       <div class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div>
@@ -311,7 +340,7 @@
       <div class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div>
         <h3 id="f4Title">Rendimiento Nivel App Nativa</h3>
-        <p id="f4Desc">La App aprovecha el hardware del smartphone almacenando caché para ofrecer una navegación fluida, incluso con conexiones débiles.</p>
+        <p id="f4Desc">La App aprovecha el hardware del smartphone almacenando caché para ofrecer una navegación fluida, incluso con conexiones débiles o sin conexión.</p>
       </div>
       <div class="card">
         <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg></div>
@@ -346,6 +375,22 @@
     <p>Móvil Social Marketing SAS</p>
   </footer>
 
+  <!-- Registro del Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registrado:', registration);
+          })
+          .catch(error => {
+            console.log('Error en Service Worker:', error);
+          });
+      });
+    }
+  </script>
+
+  <!-- Sistema de Traducciones Bilingüe -->
   <script>
     let currentLang = 'es';
     const translations = {
@@ -354,13 +399,13 @@
         heroTitle: 'Convierte tu Sitio Web en una App Móvil de Alta Conversión',
         heroSubtitle: 'Elimina las barreras de los navegadores web. Fideliza clientes, envía notificaciones sin costo e incrementa tus ventas directamente en el teléfono de tus usuarios.',
         formTitle: 'Solicita tu Demo Interactiva Gratis', formSubtitle: 'Generamos una muestra funcional de tu sitio web convertido en App para que la pruebes por 7 días.',
-        labelCompany: 'Nombre de tu Empresa / Marca', labelWebsite: 'URL de tu Sitio Web Actual', labelEmail: 'Correo Electrónico Corporativo',
+        labelCompany: 'Nombre de tu Empresa / Marca', labelWebsite: 'URL de tu Sitio Web Actual', labelEmail: 'Correo Electrónico Corporativo', labelWhatsapp: 'WhatsApp (Opcional)',
         btnSubmit: 'Solicitar App Demo Gratis', formFooter: 'Garantía de privacidad. Proceso sin costo ni tarjeta de crédito.',
         featMainTitle: 'Utilidades Estratégicas para tu Negocio', featMainSubtitle: 'Tecnología diseñada para maximizar el valor de vida del cliente (LTV) y diferenciarte de la competencia.',
         f1Title: 'Presencia Permanente en la Pantalla', f1Desc: 'Ocupa un lugar privilegiado en el teléfono de tu cliente. Cero intermediarios: tu logo siempre visible a un toque de distancia.',
-        f2Title: 'Canal Directo de Notificaciones Push', f2Desc: 'Comunica ofertas, novedades o recordatorios al instante. Tasas de apertura del 90%, superando con creces al correo tradicional.',
+        f2Title: 'Canal Directo de Notificaciones Push y Redes Sociales', f2Desc: 'Comunica ofertas, novedades o recordatorios al instante a tu app y redes sociales. Tasas de apertura del 90%, superando con creces al correo tradicional.',
         f3Title: 'Autoridad y Confianza de Marca', f3Desc: 'Publicar tu propia App en Google Play y App Store transmite solidez internacional, incrementando la conversión en ventas de nuevos usuarios.',
-        f4Title: 'Rendimiento Nivel App Nativa', f4Desc: 'La App aprovecha el hardware del smartphone almacenando caché para ofrecer una navegación fluida, incluso con conexiones débiles.',
+        f4Title: 'Rendimiento Nivel App Nativa', f4Desc: 'La App aprovecha el hardware del smartphone almacenando caché para ofrecer una navegación fluida, incluso con conexiones débiles o sin conexión.',
         f5Title: 'Sincronización Automática en Vivo', f5Desc: 'Mantenimiento cero. Todo cambio, producto o artículo que actualices en tu sitio web se verá reflejado inmediatamente en la App.',
         f6Title: 'Experiencia 100% Inmersiva', f6Desc: 'Sin barra de navegación, pestañas ni distracciones. Entorno controlado pensado exclusivamente para llevar al cliente hacia la conversión.',
         stepsTitle: 'Proceso de Trabajo Sencillo', stepsSubtitle: 'En 3 sencillos pasos ponemos tu aplicación en marcha.',
@@ -373,13 +418,13 @@
         heroTitle: 'Turn Your Website Into a High-Converting Mobile App',
         heroSubtitle: 'Break free from web browser limits. Retain customers, send free push notifications, and boost sales right on your users\' devices.',
         formTitle: 'Request Your Free Interactive Demo', formSubtitle: 'We generate a fully functional demo of your website turned into an App for a 7-day trial.',
-        labelCompany: 'Company / Brand Name', labelWebsite: 'Current Website URL', labelEmail: 'Corporate Email Address',
+        labelCompany: 'Company / Brand Name', labelWebsite: 'Current Website URL', labelEmail: 'Corporate Email Address', labelWhatsapp: 'WhatsApp (Optional)',
         btnSubmit: 'Request Free Demo App', formFooter: 'Privacy Guaranteed. No cost or credit card required.',
         featMainTitle: 'Strategic Utility for Your Business', featMainSubtitle: 'Engineered to maximize Customer Lifetime Value (LTV) and stand out from competitors.',
         f1Title: 'Permanent Home Screen Presence', f1Desc: 'Take prime real estate on your customer\'s phone. Zero middlemen: your logo is always one tap away.',
-        f2Title: 'Direct Push Notification Channel', f2Desc: 'Deliver instant promos, news, and reminders. 90% open rates that dwarf traditional email marketing.',
+        f2Title: 'Direct Push Notifications & Social Media Channel', f2Desc: 'Instantly deliver promos, news, and reminders to your app and social media. 90% open rates that dwarf traditional email marketing.',
         f3Title: 'Brand Authority & Trust', f3Desc: 'Publishing your App on Google Play and Apple App Store projects international prestige, boosting initial purchase conversions.',
-        f4Title: 'Native-Level Performance', f4Desc: 'Leverages device hardware caching for ultra-fast loading speeds, even on low-connectivity networks.',
+        f4Title: 'Native-Level Performance', f4Desc: 'Leverages device hardware caching for ultra-fast loading speeds, even on low-connectivity networks or completely offline.',
         f5Title: 'Real-Time Auto Sync', f5Desc: 'Zero maintenance required. Any update, product, or post made on your website updates automatically in the App.',
         f6Title: '100% Immersive Experience', f6Desc: 'No browser address bars, tabs, or third-party distractions. A dedicated environment focused solely on conversions.',
         stepsTitle: 'Simple Workflow', stepsSubtitle: 'Get your application up and running in 3 structured steps.',
@@ -401,6 +446,7 @@
       document.getElementById('labelCompany').innerText = t.labelCompany;
       document.getElementById('labelWebsite').innerText = t.labelWebsite;
       document.getElementById('labelEmail').innerText = t.labelEmail;
+      document.getElementById('labelWhatsapp').innerText = t.labelWhatsapp;
       document.getElementById('btnSubmit').innerText = t.btnSubmit;
       document.getElementById('formFooter').innerText = t.formFooter;
       document.getElementById('featMainTitle').innerText = t.featMainTitle;
@@ -428,4 +474,4 @@
     }
   </script>
 </body>
-</html> 
+</html>
