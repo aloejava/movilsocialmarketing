@@ -2,9 +2,9 @@
   "id": "/msm/",
   "name": "MSM - Web to App Platform",
   "short_name": "MSM",
-  "description": "Convert your website into a high-converting mobile app.",
-  "start_url": "/msm/index.html",
-  "scope": "/msm/",
+  "description": "Convert your website into a high-converting mobile app. Retain customers, send push notifications, and boost sales directly on your users' devices.",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#090d16",
   "theme_color": "#090d16",
@@ -14,59 +14,36 @@
   "categories": ["business", "productivity", "marketing"],
   "icons": [
     {
-      "src": "/msm/logo.png",
+      "src": "./logo.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/msm/logo-192.png",
+      "src": "./logo-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/msm/logo-512.png",
+      "src": "./logo-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Request Demo",
-      "short_name": "Demo",
-      "description": "Get your free interactive demo",
-      "url": "/msm/index.html",
-      "icons": [
-        {
-          "src": "/msm/logo-192.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
   "screenshots": [
     {
-      "src": "/msm/captura-ancha.png",
+      "src": "./captura-ancha.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/msm/captura-estrecha.png",
+      "src": "./captura-estrecha.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow"
     }
-  ],
-  "share_target": {
-    "action": "/msm/share",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  }
+  ]
 }
